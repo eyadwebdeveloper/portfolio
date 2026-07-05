@@ -1,98 +1,169 @@
-# Eyad Ashraf — Portfolio (React)
+# 💼 Eyad Ashraf — Developer Portfolio
 
-A Create React App conversion of the original static HTML/CSS/JS portfolio, split
-into clean, reusable components with `react-helmet-async` for SEO.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## Getting started
+A premium, single-page developer portfolio showcasing full-stack projects, collaborations, and recommendation letters. Built with React and a custom design system — animated, interactive, and tuned for performance.
+
+---
+
+## 🌐 Live Preview
+
+**[https://eyadashraf.dev](https://eyadashraf.dev)**
+
+---
+
+## ✨ Features
+
+- **Animated Page Loader** — Full-screen loader dismissed once critical assets are ready
+- **Custom Cursor** — Smooth, LERP-trailing cursor replacement (desktop / pointer devices only)
+- **Starfield Background** — Ambient animated backdrop with subtle parallax
+- **Scroll Progress Bar** — Fixed indicator tracking read progress down the page
+- **Hero Section** — Introductory panel with animated entrance
+- **About** — Background, skills, and technical focus areas
+- **Projects Grid** — Bento-style responsive grid with variable card spans, tilt-on-hover cards, live-status badges, and stack tags
+- **Collaborations** — Dedicated section highlighting organizational work (IYNA, YSJ, TutWonders)
+- **Services** — Overview of offerings for prospective clients or collaborators
+- **Recommendation Letters** — Real letters with image previews and PDF downloads
+- **Contact Form** — Client-validated form wired to a serverless function (Resend) with honeypot spam protection
+- **Scroll Reveal** — Reusable `Reveal` component fading/sliding elements in via IntersectionObserver, with directional and delay variants
+- **Sidenav** — Persistent section navigation with theme toggle
+- **Toast Notifications** — Global toast system for form feedback and confirmations
+- **Modals** — Dedicated project and recommendation-letter modals with context-based state management
+- **Click Sparks** — Decorative particle burst on click
+- **Back to Top** — Appears after a scroll threshold
+- **Dark / Light Theme** — Persisted theme toggle via `useTheme`
+
+---
+
+## 🗂️ Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── App.jsx                  # Root composition of all sections and providers
+│   ├── components/
+│   │   ├── Seo.jsx
+│   │   ├── CustomCursor.jsx
+│   │   ├── Loader.jsx
+│   │   ├── ScrollProgress.jsx
+│   │   ├── Starfield.jsx
+│   │   ├── BackToTop.jsx
+│   │   ├── ClickSparks.jsx
+│   │   ├── Sidenav.jsx
+│   │   ├── Toast.jsx
+│   │   ├── ToastContext.jsx
+│   │   ├── Reveal.jsx            # Generic scroll-reveal wrapper
+│   │   ├── ProjectCard.jsx
+│   │   ├── modals/
+│   │   │   ├── ProjectModal.jsx
+│   │   │   ├── ProjectModalContext.jsx
+│   │   │   ├── LetterModal.jsx
+│   │   │   └── LetterModalContext.jsx
+│   │   └── sections/
+│   │       ├── Hero.jsx
+│   │       ├── About.jsx
+│   │       ├── Projects.jsx
+│   │       ├── Collaborations.jsx
+│   │       ├── Services.jsx
+│   │       ├── Letters.jsx
+│   │       └── Contact.jsx
+│   ├── hooks/
+│   │   ├── useTheme.js
+│   │   ├── useTilt.js
+│   │   ├── useMagnetic.js
+│   │   └── useRipple.js
+│   ├── data/
+│   │   └── projects.js           # Project content and metadata
+│   └── styles/
+│       └── global.css            # All styles, section-commented
+├── api/
+│   └── contact.js                 # Vercel serverless function (Resend email delivery)
+└── README.md                       # This file
+```
+
+---
+
+## 🎨 Design System
+
+| CSS Variable | Usage |
+|---|---|
+| `--bg2` | Card and panel backgrounds |
+| `--ink` | Primary body text |
+| `--ink3` | Secondary / muted text |
+| `--v` | Primary gradient accent (violet) |
+| `--c` | Secondary gradient accent |
+
+**Layout:** 12-column responsive bento grid for the Projects section, with `span-4` through `span-12` utility classes for variable card sizing.
+
+---
+
+## 🧩 Component Architecture
+
+| Component / Hook | Responsibility |
+|---|---|
+| `Reveal` | Wraps any element in a self-contained IntersectionObserver-based scroll reveal, replacing global `querySelectorAll` passes |
+| `useTilt` | Adds pointer-based 3D tilt to project cards |
+| `useMagnetic` | Adds magnetic pull-toward-cursor effect on interactive buttons |
+| `useRipple` | Adds click ripple feedback on buttons |
+| `useTheme` | Manages and persists dark/light theme state |
+| `ProjectModalContext` / `LetterModalContext` | Global state for opening project and letter detail modals from anywhere in the tree |
+| `ToastContext` | Global toast dispatch used for form validation and submission feedback |
+
+---
+
+## 📬 Contact Form Backend
+
+The contact form submits to `/api/contact`, a Vercel serverless function that:
+
+- Validates required fields and email format server-side
+- Rejects spam submissions via a hidden honeypot field
+- Sends the message via the [Resend](https://resend.com) API to the site owner's inbox, with `reply_to` set to the sender's address
+
+**Required environment variable (set in Vercel project settings):**
+
+```
+RESEND_API_KEY=your_resend_api_key
+```
+
+> The sender address in `api/contact.js` must be on a domain verified with Resend before production use.
+
+---
+
+## 📱 Responsive Behaviour
+
+| Breakpoint | Layout |
+|---|---|
+| `> 1100 px` | Full desktop — 12-column project grid, multi-column sections |
+| `600 px – 1100 px` | Tablet — 6-column project grid, condensed spans |
+| `< 600 px` | Mobile — single-column stacks, full-width project cards |
+
+The custom cursor and tilt/magnetic effects are suppressed on touch devices via `(hover: hover)` media queries.
+
+---
+
+## 🚀 Deployment (Vercel)
+
+1. Push the repository to GitHub.
+2. Import the project into [Vercel](https://vercel.com/new).
+3. Add the `RESEND_API_KEY` environment variable under **Project Settings → Environment Variables**.
+4. Deploy — the `/api` directory is automatically detected and deployed as serverless functions.
+
+---
+
+## 🛠️ Local Development
 
 ```bash
+git clone https://github.com/eyadwebdeveloper/<repo-name>.git
+cd <repo-name>
 npm install
-npm start      # dev server at http://localhost:3000
-npm run build  # production build in /build
+npm run dev
 ```
 
-## What's missing (not part of the original upload)
+---
 
-Only `index.html`, `style.css`, and `script.js` were provided, so a few
-**binary assets referenced by the markup** aren't included yet. Add them and
-everything will "just work" since the paths already match:
+## 📄 License
 
-| File | Expected path |
-|---|---|
-| CV PDF | `public/cv-eyad-ashraf.pdf` |
-| Open Graph preview image | `public/og-image.jpg` |
-| IYNA / YSJ logos | `public/assets/img/logos/iyna-logo.png`, `ysj-logo.png` |
-| Recommendation letter PDFs + preview images | `public/assets/media/letters/*.pdf`, `*.jpg` |
-| Platform demo video | `public/assets/media/portal.mp4` |
-
-(One letter PDF in the original pointed at `http://localhost:5500/...` — a
-leftover local dev URL — it's been normalized to the same `/assets/media/letters/...`
-convention as the rest.)
-
-## Project structure
-
-```
-src/
-├── App.jsx                     # composes providers + layout
-├── index.js                    # ReactDOM root, HelmetProvider, web-vitals
-├── components/
-│   ├── Seo.jsx                 # react-helmet-async: title/meta/OG/JSON-LD
-│   ├── CustomCursor.jsx        # desktop-only custom cursor
-│   ├── Starfield.jsx           # animated <canvas> background
-│   ├── Loader.jsx, ScrollProgress.jsx, BackToTop.jsx, ClickSparks.jsx
-│   ├── Sidenav.jsx             # nav + theme toggle, active-section highlight
-│   ├── Reveal.jsx              # generic scroll-reveal wrapper (IntersectionObserver)
-│   ├── AnimatedCounter.jsx, SkillBar.jsx, ProjectCard.jsx,
-│   │   CaseStudyCard.jsx, LetterCard.jsx, LaptopIllustration.jsx, Footer.jsx
-│   ├── ToastContext.jsx        # toast notification state
-│   ├── modals/                 # ProjectModal + LetterModal (+ their contexts)
-│   └── sections/                # Hero, About, Projects, Collaborations,
-│                                 # Services, Letters, Contact — one file per
-│                                 # <section id="..."> in the original page
-├── data/                        # projects.js, collaborations.js, letters.js,
-│                                 # about.js, services.js — all copy lives here,
-│                                 # not hardcoded in JSX
-├── hooks/                       # useTheme, useTypewriter, useMagnetic, useTilt,
-│                                 # useRipple, useActiveSection, useNameShimmer
-└── styles/global.css            # the original stylesheet, unmodified
-```
-
-## Design decisions
-
-- **CSS stayed as one global stylesheet.** The original 3,200-line file uses
-  shared CSS custom properties and cross-cutting responsive rules (one media
-  query block touches nearly every section), so splitting it per-component
-  would risk breaking the cascade for a cosmetic-only win. Componentization
-  happened at the **markup/behavior** layer instead — every section, card,
-  and interactive effect (cursor, tilt, magnetic buttons, ripple, starfield,
-  typewriter, counters, reveal-on-scroll) is now its own component or hook
-  instead of one 727-line script running querySelectorAll on load.
-- **The laptop hero illustration** is a large, static, `aria-hidden` decorative
-  SVG with no dynamic data, so it's kept as a verbatim string
-  (`src/assets/laptopSvgInner.js`) rendered via `dangerouslySetInnerHTML`
-  rather than hand-converted attribute-by-attribute to JSX — same output,
-  far less risk of a typo silently breaking the artwork.
-- **Contact form** simulates sending (same as the original) — swap the
-  `setTimeout` in `Contact.jsx` for a real request (Formspree, your own API,
-  a serverless function) when you're ready to actually receive messages.
-
-## SEO
-
-- Per-render `<title>`, meta description, canonical URL, Open Graph, Twitter
-  Card, and a `Person` JSON-LD block via `react-helmet-async` (`Seo.jsx`),
-  scoped to `https://eyadashraf.dev`.
-- `public/robots.txt` and `public/sitemap.xml` included.
-- Fonts are preconnected + loaded in the static HTML shell (not injected by
-  JS) so they start downloading before React hydrates.
-- A tiny inline script in `public/index.html` applies the saved theme
-  before first paint, avoiding a light/dark flash on load.
-
-## Performance notes
-
-- Every scroll-triggered animation (reveal, skill bars, counters, active-nav
-  highlight) uses `IntersectionObserver`, not scroll-event polling.
-- The starfield canvas, custom cursor, and click-sparks effects clean up
-  their `requestAnimationFrame` loops and listeners on unmount.
-- `web-vitals` is wired up in `index.js` — replace the no-op logger with a
-  real analytics call when you're ready to track CLS/LCP/FID/TTFB in
-  production.
+© 2026 Eyad Ashraf. All rights reserved.
