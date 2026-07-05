@@ -1,0 +1,19 @@
+import { useEffect, useState } from "react";
+
+export default function BackToTop() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setOpen(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <a href="#hero" id="btt" className={open ? "is-open" : ""} aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </a>
+  );
+}
