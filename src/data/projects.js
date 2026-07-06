@@ -1,0 +1,91 @@
+const projects = [
+  {
+    id: "ember",
+    span: "span-12",
+    category: "frontend",
+    thumbClass: "thumb-bg-ember",
+    thumbHeight: "h1",
+    featuredBadge: "✦ Featured",
+    icon: "🔥",
+    meta: "Frontend · HTML",
+    year: "2026",
+    title: "EMBER Fine Dining",
+    description:
+      "Immersive fine-dining website for Cairo's most celebrated restaurant. Features a split-screen cinematic hero, custom cursor system with trailing ring, page loader with progress bar, skeleton image loading, interactive menu tabs with panel switching, a full reservation form with validation & confirmation flow, and scroll-triggered reveal animations throughout.",
+    stack: ["HTML5", "CSS3", "Vanilla JS", "Custom Cursor", "Animations", "Responsive"],
+    links: [
+      { type: "demo", label: "Live Demo", href: "https://eyadwebdeveloper.github.io/ember-resturant/" },
+      { type: "github", label: "GitHub", href: "https://github.com/eyadwebdeveloper/ember-restaurent" },
+    ],
+  },
+  {
+    id: "alnoor",
+    span: "span-4",
+    category: "frontend",
+    thumbClass: "thumb-bg-alnoor",
+    thumbHeight: "h1",
+    icon: "🕌",
+    meta: "Travel · Frontend",
+    year: "2026",
+    title: "Al-Noor Travel",
+    description:
+      "Premium Hajj & Umrah travel platform with luxury package showcases, immersive hero, multi-step booking UI, and full Arabic RTL support.",
+    stack: ["HTML5", "CSS3", "JavaScript", "RTL", "Responsive"],
+    links: [
+      { type: "demo", label: "Live Demo", href: "https://eyadwebdeveloper.github.io/al-noor-travel" },
+      { type: "github", label: "GitHub", href: "https://github.com/eyadwebdeveloper/al-noor-travel" },
+    ],
+  },
+  {
+    id: "iyna-site",
+    span: "span-8",
+    category: "frontend",
+    thumbClass: "thumb-bg-iyna",
+    thumbHeight: "h2",
+    featuredBadge: "✦ Published",
+    icon: "🌐",
+    meta: "Frontend · Organization",
+    year: "2025",
+    title: "IYNA Official Website",
+    description:
+      "Official website for a real published organization — the International Youth Neuroscience Association Oct. Chapter. Full production site built and deployed live at iyna-oct.com.",
+    stack: ["HTML5", "CSS3", "JavaScript", "Production", "Responsive"],
+    links: [{ type: "demo", label: "Visit Site", href: "https://iyna-oct.com" }],
+  },
+  {
+    id: "climate-cast",
+    span: "span-5",
+    category: "frontend",
+    thumbClass: "thumb-bg-climate",
+    thumbHeight: "h1",
+    icon: "🌤️",
+    meta: "Frontend · ReactJS",
+    year: "2025",
+    title: "Climate Cast",
+    description:
+      "Real-time weather dashboard with 7-day forecast, location search, and beautifully animated condition displays. Deployed on Vercel.",
+    stack: ["React", "Weather API", "Chart.js", "Vercel"],
+    links: [
+      { type: "demo", label: "Live", href: "https://climate-cast-app.vercel.app" },
+      { type: "github", label: "GitHub", href: "https://github.com/eyadwebdeveloper/climate-cast" },
+    ],
+  },
+  {
+    id: "ys-journal",
+    span: "span-7",
+    category: "frontend",
+    thumbClass: "thumb-bg-ysj",
+    thumbHeight: "h2",
+    featuredBadge: "✦ Published",
+    icon: "📰",
+    meta: "Frontend · Organization",
+    year: "2025",
+    title: "YS Journal",
+    description:
+      "Official journal website for a real published organization, built entirely with React.js and deployed live at ys-journal.org — a modern, responsive publication platform.",
+    stack: ["React.js", "JavaScript", "CSS3", "Production", "Responsive"],
+    links: [{ type: "demo", label: "Visit Site", href: "https://ys-journal.org" }],
+  },
+];
+
+export default projects;
