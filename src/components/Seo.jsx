@@ -62,7 +62,7 @@ export default function Seo({
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="Eyad Ashraf, Full Stack Developer, Laravel Developer, React Developer, PHP Developer, Web Developer Egypt"
+        content="Eyad Ashraf, Full Stack Developer, Laravel Developer, React Developer, PHP Developer, Web Developer Egypt, Web, Website, Developer, eyad, Eyad, Eyad Ashraf, Web Dev"
       />
       <meta name="author" content="Eyad Ashraf" />
       <meta name="robots" content="index, follow" />
