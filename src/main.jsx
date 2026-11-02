@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
-// Self-hosted font (all axes: weight, width, optical size). Replaces the Google Fonts request.
-import '@fontsource-variable/bricolage-grotesque/full.css';
+// Self-hosted font (weight + optical size axes). Replaces the Google Fonts request.
+import '@fontsource-variable/bricolage-grotesque/opsz.css';
 import App from './App';
 
 const container = document.getElementById('root');
