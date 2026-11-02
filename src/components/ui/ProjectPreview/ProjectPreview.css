@@ -24,6 +24,7 @@
   letter-spacing: -.03em;
 }
 
+/* Title card: shows while the current image is still loading. */
 .project-preview::after {
   content: attr(data-title);
 }
@@ -34,13 +35,20 @@
   opacity: 1;
 }
 
-.project-preview img {
+/* All images stay in the DOM (so they preload); only the current one shows. */
+.project-preview__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.project-preview__img.is-current {
+  opacity: 1;
 }
 
 @media (hover:none) {

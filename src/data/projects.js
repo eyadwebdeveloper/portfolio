@@ -1,10 +1,10 @@
-import tutCare from '@/assets/images/projects/tut-care.jpg';
-import tutWonders from '@/assets/images/projects/tut-wonders.jpg';
-import ember from '@/assets/images/projects/ember.jpg';
-import alNoor from '@/assets/images/projects/al-noor.jpg';
-import iyna from '@/assets/images/projects/iyna.jpg';
-import climateCast from '@/assets/images/projects/climate-cast.jpg';
-import ysJournal from '@/assets/images/projects/ys-journal.jpg';
+import tutCare from '@/assets/images/projects/tut-care.webp';
+import tutWonders from '@/assets/images/projects/tut-wonders.webp';
+import ember from '@/assets/images/projects/ember.webp';
+import alNoor from '@/assets/images/projects/al-noor.webp';
+import iyna from '@/assets/images/projects/iyna.webp';
+import climateCast from '@/assets/images/projects/climate-cast.webp';
+import ysJournal from '@/assets/images/projects/ys-journal.webp';
 
 export const projects = [
   {
