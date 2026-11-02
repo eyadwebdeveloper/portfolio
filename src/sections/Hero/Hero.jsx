@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { siteConfig } from '@/config/siteConfig';
 import { useHeroWave } from '@/hooks/useHeroWave';
 import Button from '@/components/ui/Button/Button';
+import CvDownload from '@/components/ui/CvDownload/CvDownload';
 import './Hero.css';
 
 const LETTER_DELAY_STRIDE = 4;
@@ -37,7 +38,7 @@ export default function Hero() {
         </div>
         <div className="hero__actions">
           <Button href="#work" magnetic>See my work</Button>
-          <Button href={siteConfig.cvPath} variant="outline" magnetic download>Download CV</Button>
+          <CvDownload />
         </div>
       </div>
     </section>

@@ -1,0 +1,101 @@
+.cv-download {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Two classes so this wins over .button regardless of CSS load order. */
+.cv-download .cv-download__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cv-download .cv-download__trigger[aria-expanded="true"] {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.cv-download__trigger svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  transition: transform .4s var(--ease);
+}
+
+/* Arrow points up while closed (the menu opens upward), down while open. */
+.cv-download__trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* Opens upward: the hero actions sit at the bottom of the screen. */
+.cv-download__menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  z-index: 20;
+  width: min(320px, calc(100vw - 48px));
+  padding: 8px;
+  border-radius: 18px;
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--line), 0 30px 80px -20px #000c;
+  transform-origin: bottom right;
+  animation: cv-menu-in .3s var(--ease);
+}
+
+.cv-download__item {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: background .25s;
+}
+
+.cv-download__item:hover {
+  background: var(--line);
+}
+
+.cv-download__item:focus-visible {
+  outline: 2px solid var(--hi);
+  outline-offset: -2px;
+}
+
+.cv-download__item b {
+  display: block;
+  font-weight: 600;
+}
+
+.cv-download__item span {
+  display: block;
+  margin-top: 2px;
+  color: var(--mut);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+@keyframes cv-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(.97);
+  }
+}
+
+@media (max-width: 640px) {
+  /* The control can wrap to the left edge on phones, so open rightwards. */
+  .cv-download__menu {
+    right: auto;
+    left: 0;
+    transform-origin: bottom left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-download__menu {
+    animation: none;
+  }
+
+  .cv-download__trigger svg {
+    transition: none;
+  }
+}

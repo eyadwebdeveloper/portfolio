@@ -1,4 +1,9 @@
 .video-modal {
+  /* Explicit centering: a global `* { margin: 0 }` reset removes the dialog's default `margin: auto`. */
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
   width: min(960px, 94vw);
   max-width: none;
   max-height: 94vh;
