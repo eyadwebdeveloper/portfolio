@@ -10,7 +10,7 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font: 400 18px/1.55 "Bricolage Grotesque",system-ui,sans-serif;
+  font: 400 18px/1.55 "Bricolage Grotesque Variable","Bricolage Grotesque",system-ui,sans-serif;
   overflow-x: hidden;
   transition: background .4s,color .4s;
 }

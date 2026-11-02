@@ -7,13 +7,15 @@
   margin-top: 40px;
 }
 
+/* Dim state uses the muted text color instead of low opacity, so unlit words
+   still pass the 4.5:1 contrast check in both light and dark themes. */
 .about__word {
-  opacity: .16;
-  transition: opacity .35s;
+  color: var(--mut);
+  transition: color .35s;
 }
 
 .about__word.is-active {
-  opacity: 1;
+  color: var(--ink);
 }
 
 .skills {
@@ -75,6 +77,6 @@
 
 @media (prefers-reduced-motion:reduce) {
   .about__word {
-    opacity: 1;
+    color: var(--ink);
   }
 }
