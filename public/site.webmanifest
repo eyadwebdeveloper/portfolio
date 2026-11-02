@@ -1,0 +1,82 @@
+{
+  "id": "/",
+  "name": "Eyad Ashraf — Full-stack Web Developer",
+  "short_name": "Eyad Ashraf",
+  "description": "Portfolio of Eyad Ashraf, a full-stack web developer in Cairo, Egypt. Explore selected projects, services, experience, recommendations, and contact information.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "theme_color": "#0F0B22",
+  "background_color": "#F5F3FB",
+  "categories": ["business", "portfolio", "developer"],
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View projects",
+      "short_name": "Projects",
+      "description": "Browse Eyad Ashraf's selected work.",
+      "url": "/#work",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "About Eyad",
+      "short_name": "About",
+      "description": "Read about Eyad Ashraf's experience and skills.",
+      "url": "/#about",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contact Eyad",
+      "short_name": "Contact",
+      "description": "Start a project conversation with Eyad Ashraf.",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
