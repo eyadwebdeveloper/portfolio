@@ -23,6 +23,16 @@
   border-color: var(--acc);
 }
 
+.contact-form {
+  position: relative; 
+}
+
+.contact-form input.visually-hidden {
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
 .contact-form ::placeholder {
   color: var(--mut);
 }

@@ -93,3 +93,48 @@
   color: var(--mut);
   font-size: 15px;
 }
+
+/* ---- CV row: expands inline into CV choices ---- */
+
+.contact__links button[aria-expanded="true"] {
+  color: var(--acc);
+}
+ 
+.contact__cv-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden; /* keeps closed options out of the tab order */
+  transition: grid-template-rows .4s var(--ease), visibility 0s .4s;
+}
+ 
+.contact__cv-panel.is-open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows .4s var(--ease), visibility 0s;
+}
+ 
+.contact__cv-options {
+  min-height: 0;
+  overflow: hidden;
+  padding-left: 18px; /* nests the options under the CV row */
+}
+ 
+/* Label on top, description below: the column is too narrow for side by side. */
+.contact__links .contact__cv-options a {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+ 
+.contact__links .contact__cv-options a:focus-visible {
+  outline: 2px solid var(--hi);
+  outline-offset: -2px;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .contact__cv-panel,
+  .contact__cv-panel.is-open {
+    transition: none;
+  }
+}
+ 
