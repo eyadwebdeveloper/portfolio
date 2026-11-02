@@ -1,0 +1,80 @@
+.about__statement {
+  font-size: clamp(28px,4.8vw,68px);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  font-weight: 600;
+  max-width: 19em;
+  margin-top: 40px;
+}
+
+.about__word {
+  opacity: .16;
+  transition: opacity .35s;
+}
+
+.about__word.is-active {
+  opacity: 1;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 48px;
+  margin-top: 96px;
+}
+
+.skills h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.skills li {
+  list-style: none;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  color: var(--mut);
+}
+
+.skills ul {
+  padding: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(170px,1fr));
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+}
+
+.stats div {
+  padding: 28px 0;
+}
+
+.stats b {
+  display: block;
+  font-size: clamp(52px,8vw,112px);
+  letter-spacing: -.05em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.stats em {
+  font-style: normal;
+}
+
+.stats span {
+  color: var(--mut);
+}
+
+.about__bio {
+  max-width: 62ch;
+  color: var(--mut);
+  margin-top: 32px;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .about__word {
+    opacity: 1;
+  }
+}

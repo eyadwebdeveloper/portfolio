@@ -1,0 +1,50 @@
+.project-preview {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: min(360px,42vw);
+  aspect-ratio: 1910/860;
+  border-radius: 10px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9;
+  scale: .5;
+  rotate: -4deg;
+  opacity: 0;
+  transition: scale .45s var(--ease),opacity .25s,rotate .45s var(--ease);
+  background: var(--acc);
+  color: var(--bg);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.project-preview::after {
+  content: attr(data-title);
+}
+
+.project-preview.is-active {
+  scale: 1;
+  rotate: 0deg;
+  opacity: 1;
+}
+
+.project-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+@media (hover:none) {
+  .project-preview {
+    display: none;
+  }
+}

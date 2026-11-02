@@ -1,0 +1,63 @@
+.org-card {
+  border-left: 2px solid var(--ink);
+  padding-left: 28px;
+  transition: border-color .3s;
+}
+
+.org-card:hover {
+  border-color: var(--acc);
+}
+
+.org-card h3 {
+  font-size: clamp(44px,6vw,88px);
+  letter-spacing: -.045em;
+  line-height: .95;
+  font-weight: 700;
+}
+
+.org-card .org-card__role {
+  color: var(--mut);
+  margin: 10px 0 22px;
+}
+
+.org-card li {
+  list-style: none;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.org-card ul {
+  padding: 0;
+  margin: 24px 0;
+}
+
+.org-card li b {
+  display: block;
+  font-weight: 600;
+}
+
+.org-card li span {
+  color: var(--mut);
+  font-size: 16px;
+}
+
+.org-card .org-card__stack {
+  color: var(--mut);
+  font-size: 15px;
+}
+
+.org-card .link-list {
+  margin-top: 22px;
+}
+
+.org-card__summary {
+  color: var(--mut);
+  margin: 0 0 6px;
+}
+
+.org-card__logo {
+  height: 46px;
+  width: auto;
+  display: block;
+  margin-bottom: 18px;
+}

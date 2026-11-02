@@ -1,0 +1,18 @@
+.site-footer {
+  padding: clamp(88px,12vw,170px) var(--pad) 36px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 28px;
+  color: var(--mut);
+  font-size: 15px;
+}
+
+.site-footer .site-footer__links {
+  display: flex;
+  gap: 22px;
+}
+
+.site-footer a:hover {
+  color: var(--ink);
+}

@@ -1,62 +1,38 @@
-import Seo from "./components/Seo";
-import CustomCursor from "./components/CustomCursor";
-import Loader from "./components/Loader";
-import ScrollProgress from "./components/ScrollProgress";
-import Starfield from "./components/Starfield";
-import BackToTop from "./components/BackToTop";
-import ClickSparks from "./components/ClickSparks";
-import Sidenav from "./components/Sidenav";
-import Toast from "./components/Toast";
-import { ToastProvider } from "./components/ToastContext";
-import ProjectModal from "./components/modals/ProjectModal";
-import { ProjectModalProvider } from "./components/modals/ProjectModalContext";
-import LetterModal from "./components/modals/LetterModal";
-import { LetterModalProvider } from "./components/modals/LetterModalContext";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Projects from "./components/sections/Projects";
-import Collaborations from "./components/sections/Collaborations";
-import Services from "./components/sections/Services";
-import Letters from "./components/sections/Letters";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/Footer";
-import useTheme from "./hooks/useTheme";
+import { useEffect } from 'react';
+import { trackPointer } from '@/lib/pointer';
+import CustomCursor from '@/components/ui/CustomCursor/CustomCursor';
+import BackToTop from '@/components/ui/BackToTop/BackToTop';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import Hero from '@/sections/Hero/Hero';
+import Work from '@/sections/Work/Work';
+import About from '@/sections/About/About';
+import Collaborations from '@/sections/Collaborations/Collaborations';
+import Services from '@/sections/Services/Services';
+import Letters from '@/sections/Letters/Letters';
+import Contact from '@/sections/Contact/Contact';
+
+import '@/styles/theme.css';
+import '@/styles/base.css';
 
 export default function App() {
-  const { theme, toggleTheme } = useTheme();
+  useEffect(trackPointer, []);
 
   return (
-    <ToastProvider>
-      <ProjectModalProvider>
-        <LetterModalProvider>
-          <Seo />
-
-          <CustomCursor />
-          <Loader />
-          <ScrollProgress />
-          <Starfield />
-          <div className="stripe-bg" />
-          <BackToTop />
-          <ClickSparks />
-          <Toast />
-
-          <Sidenav theme={theme} onToggleTheme={toggleTheme} />
-
-          <main>
-            <Hero />
-            <About />
-            <Projects />
-            <Collaborations />
-            <Services />
-            <Letters />
-            <Contact />
-            <Footer />
-          </main>
-
-          <ProjectModal />
-          <LetterModal />
-        </LetterModalProvider>
-      </ProjectModalProvider>
-    </ToastProvider>
+    <>
+      <CustomCursor />
+      <Header />
+      <main id="top">
+        <Hero />
+        <Work />
+        <About />
+        <Collaborations />
+        <Services />
+        <Letters />
+        <Contact />
+      </main>
+      <Footer />
+      <BackToTop />
+    </>
   );
 }

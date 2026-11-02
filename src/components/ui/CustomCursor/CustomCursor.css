@@ -1,0 +1,26 @@
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  margin: -7px;
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 99;
+  transition: width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease);
+}
+
+.custom-cursor.is-hovering {
+  width: 60px;
+  height: 60px;
+  margin: -30px;
+}
+
+@media (hover:none) {
+  .custom-cursor {
+    display: none;
+  }
+}

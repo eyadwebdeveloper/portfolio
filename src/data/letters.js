@@ -1,24 +1,23 @@
-const letters = [
+import janaPreview from '@/assets/images/letter-previews/jana-iyna.jpg';
+import ahmedPreview from '@/assets/images/letter-previews/ahmed-ysj.jpg';
+
+export const letters = [
   {
-    id: "jana-ahmed",
-    org: "IYNA",
-    orgLogo: "/assets/img/logos/iyna-logo.png",
-    orgFallback: "IY",
-    preview: "/assets/media/letters/jana-ahmed-preview.jpg",
-    name: "Jana Ahmed",
-    title: "IYNA October Vice President 2025",
-    pdf: "/assets/media/letters/jana-iyna.pdf",
+    id: 'jana-iyna',
+    author: 'Jana Ahmed',
+    role: 'Vice President, IYNA October Chapter',
+    excerpt: '“One of the most vital and impactful members of the chapter.” Read the full letter.',
+    pdfUrl: '/letters/jana-iyna.pdf',
+    previewImage: janaPreview,
+    previewAlt: 'First page of the IYNA recommendation letter',
   },
   {
-    id: "ahmed-saif",
-    org: "YSJ",
-    orgLogo: "/assets/img/logos/ysj-logo.png",
-    orgFallback: "YS",
-    preview: "/assets/media/letters/ahmed-saif-preview.jpg",
-    name: "Ahmed Saif El-Din",
-    title: "YSJ President 2025",
-    pdf: "/assets/media/letters/ahmed-ysj.pdf",
+    id: 'ahmed-ysj',
+    author: 'Ahmed Eldesouki',
+    role: 'Former President, Youth Science Journal',
+    excerpt: '“Excellent technical capability and a level of professional reliability that would be valuable in any organization he joins.” Read the full letter.',
+    pdfUrl: '/letters/ahmed-ysj.pdf',
+    previewImage: ahmedPreview,
+    previewAlt: 'First page of the YSJ recommendation letter',
   },
 ];
-
-export default letters;

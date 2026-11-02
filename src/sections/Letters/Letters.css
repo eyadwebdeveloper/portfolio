@@ -1,0 +1,54 @@
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(min(100%,340px),1fr));
+  gap: 40px;
+  margin-top: 72px;
+  max-width: 960px;
+}
+
+.letter-grid a {
+  display: block;
+  transition: transform .6s var(--ease);
+}
+
+.letter-grid a:nth-child(2) {
+  margin-top: 56px;
+}
+
+.letter-grid a:hover {
+  transform: rotate(-1.5deg) translateY(-10px);
+}
+
+.letter-grid img {
+  width: 100%;
+  aspect-ratio: 1.6;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  background: var(--line);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.letter-grid b {
+  display: block;
+  font-size: 22px;
+  margin-top: 16px;
+  letter-spacing: -.02em;
+}
+
+.letter-grid span {
+  color: var(--mut);
+  font-size: 16px;
+  display: block;
+}
+
+.letter-grid .letter-card__quote {
+  color: var(--ink);
+  margin-top: 10px;
+}
+
+.letter-card__quote {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.45;
+}
