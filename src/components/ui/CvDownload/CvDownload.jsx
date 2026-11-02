@@ -24,11 +24,12 @@ export default function CvDownload() {
     const closeOnEscape = (event) => {
       if (event.key === 'Escape') {
         setIsOpen(false);
-        getTrigger().focus();
+        getTrigger().focus({ preventScroll: true });
       }
     };
 
-    menuRef.current.querySelector('a').focus();
+    // preventScroll: focusing must not scroll the page, or the layout jumps.
+    menuRef.current.querySelector('a').focus({ preventScroll: true });
     document.addEventListener('pointerdown', closeOnOutsidePress);
     document.addEventListener('keydown', closeOnEscape);
     return () => {
@@ -48,7 +49,7 @@ export default function CvDownload() {
     const items = [...menuRef.current.querySelectorAll('a')];
     const current = items.indexOf(document.activeElement);
     const step = event.key === 'ArrowDown' ? 1 : -1;
-    items[(current + step + items.length) % items.length].focus();
+    items[(current + step + items.length) % items.length].focus({ preventScroll: true });
   };
 
   const openFromKeyboard = (event) => {
