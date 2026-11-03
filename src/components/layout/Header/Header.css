@@ -20,7 +20,7 @@
 }
 
 .site-header__logo {
-  width: 34px;
+  width: auto;
   height: 34px;
   transition: transform .6s var(--ease);
 }
@@ -42,6 +42,10 @@
 
 .site-header a:hover {
   background-size: 100% 1px;
+}
+
+.site-header a.site-header__brand:hover {
+  background-size: 0 1px;
 }
 
 .site-header .site-header__cta {
